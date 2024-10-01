@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body style=" background-image: url('1.jpg');">
+    
+
+    
+
+
+    <nav class="n">
+        <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+        </div>
+        <div class="logo">
+            GitHub Profile
+        </div>
+        <div class="nav-items">
+            <li><a href="index.html"><div class="d">Home</div></a></li>
+            <li><a href="" data-bs-toggle="modal" data-bs-target="#gitModal"><div class="d"> What is GitHub Profile Finder ?</div></a></li>
+
+            <li><a href="" data-bs-toggle="modal" data-bs-target="#contactModal"><div class="d">Contact</div></a></li>
+
+
+        </div>
+        <div class="search-icon">
+            <span class="fas fa-search"></span>
+        </div>
+        <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+        </div>
+        <form action="#">
+            <input type="search" class="search-data" placeholder=" Getting started with github" disabled>
+            <button type="submit" class="fas fa-search" onclick="myfn()"></button>
+        </form>
+    </nav>
+
+
+    <br><br><br><br><br><br>
+   
+    <div class="container">
+        
+        
+        <div class="row justify-content-center pt-5 searchblock">
+            <div class="col-12 col-md-10 col-lg-8">
+                <div id="message"></div>
+                <form id="searchForm" class="card card-sm" method="POST">
+                    <div class="card-body row no-gutters align-items-center">
+                        <div class="col-auto">
+                            <i class="fas fa-search h4 text-body"></i>
+                        </div>
+                        <!--end of col-->
+                        <div class="col">
+                            <input class="form-control form-control-lg form-control-borderless" type="search"
+                                placeholder="Search GitHub Profile by typing github username" name="searchInput" id="searchInput"
+                                autocomplete="on">
+                        </div>
+                        <!--end of col-->
+                        <div class="col-auto">
+                            <button class="btn btn-lg btn-success" type="submit">Search</button>
+                        </div>
+                        <!--end of col-->
+                    </div>
+                </form>
+            </div>
+            <!--end of col-->
+        </div><br><br>
+        
+
+        <div class="profile">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="profile-sidebar">
+                        <div id="profile"></div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="profile-content">
+                        <!-- cards -->
+                        <ol class="d-flex flex-wrap list-style-none gutter-condensed mb-4" id="repos"></ol>
+
+                    </div>
+                    <footer class="text-center pt-2"><a href="javascript:window.location.reload()">Search Another
+                            Profile</a></footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ######## footer -->
+    <br><br><br><br><br><br><br><br><br><br><br>
+    
+    
+        <p  class="text-center text-white">Note : Any Error Occurs then Contact Us. Designed and Developed by
+            Pranav Kulkarni & Mansi Kothale</p>
+        <p class="text-center text-white">All Rights Reserved <a href="https://xenodochial-poincare-5fa0fb.netlify.app/">
+                @Mansi kothale 21-22 </a></p>
+
+  
+
+    <div class="modal fade" id="gitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">What is GitHub Profile Finder ?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" class="info">
+                   <b> Github Profile Finder - </b><br>
+                    <b>In 'Github Profile Finder', we can search GitHub users by their GitHub username and we will get
+                    user's profile information along with links to latest 5 repositories as you type in the search
+                    query.
+                    Every time you type something (every word), the application will make a request to GitHub API
+                    looking for the typed username [Use of keyup event] and respective user information matching the
+                    query will be displayed. If user not found, an alert message will be displayed which will disappear
+                    after 3000 seconds.
+                    The profile information will contain avatar, link to user's GitHub profile along with his profile
+                    information such as his company, link to website or blog, location, and his membership information.
+                    The latest 5 repositories will be displayed along with a link to the repository and other related
+                    parameters such as the number of stars, number of watchers, number of forks and the language used in
+                    the repository.</b><br>
+                    <hr>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ########### CONTACT MODAL ######### -->
+  <!-- ########### CONTACT MODAL ######### -->
+  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle"><h2>Contact us Through Social Media</h2></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  
+              </button>
+          </div>
+          <div class="modal-body">
+            
+             <h2><b>Pranav Kulkarni</b></h2>            
+        <a href="https://www.instagram.com/__name__pranav/"><i class="fab fa-instagram text-danger fa-2x"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a href="https://www.linkedin.com/in/pranavk2905/"><i class="fab fa-linkedin text-primary fa-2x"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+        <a href="https://github.com/pranavkulkarni2905/"><i class="fab fa-github text-dark fa-2x"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a href="https://api.whatsapp.com/send/?phone=+918237196934&text=Hello%20Pranav %20!!" target="_blank"><i
+        class="fab fa-whatsapp text-success fa-2x wp"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a href="tel:+91 8237196934" target="_blank"><i
+        class="fas fa-phone-alt fa-2x t"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a href="mailto:pdk29052003@gmail.com" target="_blank"><i class="fas fa-envelope text-dark fa-2x m"></i></a>
+    <br><br><br>
+    <h2><b> Mansi Kothale </b></h2>
+
+    <a href="https://www.linkedin.com/in/mansi-kothale-b90581201/"><i class="fab fa-linkedin text-primary fa-2x"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+    <a href="https://github.com/this-is-mansi"><i class="fab fa-github text-dark fa-2x"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a href="https://api.whatsapp.com/send/?phone=+918262990252&text=Hello%20Mansi %20!!" target="_blank"><i
+    class="fab fa-whatsapp text-success fa-2x wp"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="tel:+91 8262990252" target="_blank"><i
+    class="fas fa-phone-alt fa-2x t"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="mailto:mansikothale@gmail.com" target="_blank"><i class="fas fa-envelope text-dark fa-2x m"></i></a>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+
+          </div>
+      </div>
+  </div>
+</div>
+    <script>
+        const menuBtn = document.querySelector(".menu-icon span");
+        const searchBtn = document.querySelector(".search-icon");
+        const cancelBtn = document.querySelector(".cancel-icon");
+        const items = document.querySelector(".nav-items");
+        const form = document.querySelector("form");
+        menuBtn.onclick = () => {
+            items.classList.add("active");
+            menuBtn.classList.add("hide");
+            searchBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+        }
+        cancelBtn.onclick = () => {
+            items.classList.remove("active");
+            menuBtn.classList.remove("hide");
+            searchBtn.classList.remove("hide");
+            cancelBtn.classList.remove("show");
+            form.classList.remove("active");
+            cancelBtn.style.color = "#ff3d00";
+        }
+        searchBtn.onclick = () => {
+            form.classList.add("active");
+            searchBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+        }
+        function myfn()
+    {
+        window.open("https://www.youtube.com/watch?v=noZnOSpcjYY");
+    }
+    </script>
+   
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+     </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+     </script>
+    <script src="app.js"></script>
+
+
+
+</body>
+
+</html>
